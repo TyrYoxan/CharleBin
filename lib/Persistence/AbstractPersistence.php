@@ -21,24 +21,24 @@ use PrivateBin\Data\AbstractData;
  */
 abstract class AbstractPersistence
 {
-    /**
-     * data storage to use to persist something
-     *
-     * @access private
-     * @static
-     * @var AbstractData
-     */
-    protected static $_store;
+	/**
+	 * data storage to use to persist something
+	 *
+	 * @access private
+	 * @static
+	 * @var AbstractData
+	 */
+	protected static $_store;
 
-    /**
-     * set the path
-     *
-     * @access public
-     * @static
-     * @param  AbstractData $store
-     */
-    public static function setStore(AbstractData $store)
-    {
-        self::$_store = $store;
-    }
+	/**
+	 * set the path
+	 *
+	 * @access public
+	 * @static
+	 * @param  AbstractData $store
+	 */
+	public static function setStore(AbstractData $store)
+	{
+		self::$_store = $store;
+	}
 }
