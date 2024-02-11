@@ -17,7 +17,7 @@ Nous sommes ravis que vous souhaitiez contribuer à PrivateBin ! Nous accueillon
 - **Tests :** Assurez-vous que vos modifications sont accompagnées de tests appropriés et que tous les tests existants passent.
 - **Documentation :** Mettez à jour la documentation en conséquence pour refléter vos modifications si nécessaire.
 - **Branches :** Utilisez des noms de branches significatifs et évitez les commits inutiles.
-
+- **Syntaxe :** Vérifier la syntaxe de votre code. Pour vérifier utiliser make lint. Pour plus de détail lisé le Makefile.
 ## Contact
 
 Si vous avez des questions ou des préoccupations, n'hésitez pas à nous contacter à l'adresse suivante : [email@example.com](mailto:email@example.com).
