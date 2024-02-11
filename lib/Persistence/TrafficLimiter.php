@@ -208,7 +208,7 @@ class TrafficLimiter extends AbstractPersistence
         if ($traffic_limiter > 0 && ($traffic_limiter + self::$_limit >= $now)) {
             $result = false;
         } else {
-            $tl     = time();
+            $traffic_limiter     = time();
             $result = true;
         }
         if (!self::$_store->setValue((string) $traffic_limiter, 'traffic_limiter', $hash)) {
