@@ -69,8 +69,8 @@ class PurgeLimiter extends AbstractPersistence
         }
 
         $now  = time();
-        $pl   = (int) self::$_store->getValue('purge_limiter');
-        if ($pl + self::$_limit >= $now) {
+        $purge_limiter   = (int) self::$_store->getValue('purge_limiter');
+        if ($purge_limiter + self::$_limit >= $now) {
             return false;
         }
         $hasStored = self::$_store->setValue((string) $now, 'purge_limiter');
