@@ -203,15 +203,15 @@ class TrafficLimiter extends AbstractPersistence
         // used as array key, which are limited in length, hence using algo with shorter range
         $hash = self::getHash('sha256');
         $now  = time();
-        $tl   = (int) self::$_store->getValue('traffic_limiter', $hash);
+        $traffic_limiter   = (int) self::$_store->getValue('traffic_limiter', $hash);
         self::$_store->purgeValues('traffic_limiter', $now - self::$_limit);
-        if ($tl > 0 && ($tl + self::$_limit >= $now)) {
+        if ($traffic_limiter > 0 && ($traffic_limiter + self::$_limit >= $now)) {
             $result = false;
         } else {
             $tl     = time();
             $result = true;
         }
-        if (!self::$_store->setValue((string) $tl, 'traffic_limiter', $hash)) {
+        if (!self::$_store->setValue((string) $traffic_limiter, 'traffic_limiter', $hash)) {
             error_log('failed to store the traffic limiter, it probably contains outdated information');
         }
         if ($result) {
