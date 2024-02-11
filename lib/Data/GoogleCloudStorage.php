@@ -143,8 +143,8 @@ class GoogleCloudStorage extends AbstractData
     public function read($pasteid)
     {
         try {
-            $o    = $this->_bucket->object($this->_getKey($pasteid));
-            $data = $o->downloadAsString();
+            $bucket    = $this->_bucket->object($this->_getKey($pasteid));
+            $data = $bucket->downloadAsString();
             return Json::decode($data);
         } catch (NotFoundException $e) {
             return false;
@@ -186,8 +186,8 @@ class GoogleCloudStorage extends AbstractData
      */
     public function exists($pasteid)
     {
-        $o = $this->_bucket->object($this->_getKey($pasteid));
-        return $o->exists();
+        $bucket = $this->_bucket->object($this->_getKey($pasteid));
+        return $bucket->exists();
     }
 
     /**
@@ -228,8 +228,8 @@ class GoogleCloudStorage extends AbstractData
     public function existsComment($pasteid, $parentid, $commentid)
     {
         $name = $this->_getKey($pasteid) . '/discussion/' . $parentid . '/' . $commentid;
-        $o    = $this->_bucket->object($name);
-        return $o->exists();
+        $bucket    = $this->_bucket->object($name);
+        return $bucket->exists();
     }
 
     /**
@@ -310,8 +310,8 @@ class GoogleCloudStorage extends AbstractData
             $key = 'config/' . $namespace . '/' . $key;
         }
         try {
-            $o = $this->_bucket->object($key);
-            return $o->downloadAsString();
+            $bucket = $this->_bucket->object($key);
+            return $bucket->downloadAsString();
         } catch (NotFoundException $e) {
             return '';
         }
