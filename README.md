@@ -22,3 +22,6 @@ Pour installer PrivateBin, suivez les étapes suivantes :
 ## Contribution
 
 Si vous souhaitez contribuer à PrivateBin, veuillez consulter le fichier `CONTRIBUTING.md` pour obtenir des instructions détaillées sur la façon de contribuer au projet.
+
+
+Auteur: BRITO Clément, Bruson Paul
